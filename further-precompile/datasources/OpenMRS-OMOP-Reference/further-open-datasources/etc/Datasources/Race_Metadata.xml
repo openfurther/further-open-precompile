@@ -1,0 +1,10 @@
+<div>
+   <h2>Definition</h2>
+   <p>Race - Race refers to the commonalities in a person's physical appearance, such as skin color, eye color, hair color, bone/jaw structure etc. Ethnicity, relates to cultural factors such as nationality, culture, ancestry, language and beliefs.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Cancer Repository (OMOP data source)</li>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+   </ul>
+</div>

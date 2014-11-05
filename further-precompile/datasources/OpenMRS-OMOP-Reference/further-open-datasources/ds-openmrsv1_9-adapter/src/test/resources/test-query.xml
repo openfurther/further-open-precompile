@@ -1,0 +1,22 @@
+<query xmlns="http://further.utah.edu/core/query" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" qid="1" rootObject="Person">
+  <rootCriterion>
+    <searchType>CONJUNCTION</searchType>
+    <criteria>
+      <searchType>CONJUNCTION</searchType>
+      <criteria>
+        <searchType>SIMPLE</searchType>
+        <parameters>
+          <parameter xsi:type="RelationType">EQ</parameter>
+          <parameter xsi:type="xs:string">obs11.conceptId</parameter>
+          <parameter xsi:type="xs:long">147853</parameter>
+        </parameters>
+      </criteria>
+    </criteria>
+  </rootCriterion>
+  <aliases>
+    <alias associationObject="Observation">
+      <key>obs11</key>
+      <value>observations</value>
+    </alias>
+  </aliases>
+</query>

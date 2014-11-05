@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) [2013] [The FURTHeR Project]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:camel="http://camel.apache.org/schema/spring"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:core="http://further.utah.edu/schema/core"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/jee
+	http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+	http://camel.apache.org/schema/spring
+	http://camel.apache.org/schema/spring/camel-spring.xsd
+	http://further.utah.edu/schema/core
+	http://further.utah.edu/schema/core/core.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- =========================================== -->
+	<!-- Life cycle management -->
+	<!-- =========================================== -->
+
+	<!-- Life cycle manager/controller -->
+	<bean id="defaultCamelLifeCycleController" abstract="true"
+		class="edu.utah.further.ds.jms.lifecycle.CamelLifeCycleController">
+		<property name="lifeCycleMap">
+			<map>
+				<entry key="DATA_QUERY" value-ref="dataQueryLifeCycle" />
+				<entry key="COUNT_QUERY" value-ref="countQueryLifeCycle" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- =========================================== -->
+	<!-- Life cycle implementation -->
+	<!-- =========================================== -->
+
+	<!-- Data query flow -->
+	<bean id="dataQueryLifeCycle" class="edu.utah.further.ds.impl.lifecycle.DataQueryLifeCycle">
+		<property name="metadataRetriever" ref="metaDataService" />
+		<property name="requestProcessors">
+			<list>
+				<!-- Initializer must always be the first processor to create the data 
+					source's query context -->
+				<ref bean="initializerQp" />
+				<ref bean="queryTranslatorQp" />
+				<ref bean="associatedResultQp"/>
+				<ref bean="queryExecutorQp" />
+				<!-- Result paging loop -->
+				<bean class="edu.utah.further.core.chain.PagingRequestProcessorImpl"
+					p:pageSize="200" p:sourceAttr-ref="queryResultAttr"
+					p:pagingControllerAttr-ref="pagingControllerAttr">
+					<property name="iterableType">
+						<util:constant
+							static-field="edu.utah.further.core.api.collections.page.IterableType.SCROLLABLE_RESULTS" />
+					</property>
+					<property name="mainLoop">
+						<list>
+							<ref bean="hibernateResultListRefresher"/>
+							<ref bean="resultTranslatorQp" />
+							<ref bean="persistenceRp" />
+							<ref bean="pageFinalizerHibernateQp" /> <!-- FUR-1135, FUR-1286 -->
+						</list>
+					</property>
+					<property name="pagerFactory">
+						<bean
+							class="edu.utah.further.core.util.collections.page.DefaultPagerFactory">
+							<property name="providers">
+								<list>
+									<ref bean="pagingProviderHibernate" />
+								</list>
+							</property>
+						</bean>
+					</property>
+				</bean>
+				<ref bean="mockFinalizerQp" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Count query flow -->
+	<bean id="countQueryLifeCycle" class="edu.utah.further.ds.impl.lifecycle.DataQueryLifeCycle">
+		<property name="metadataRetriever" ref="metaDataService" />
+		<property name="requestProcessors">
+			<list>
+				<ref bean="initializerQp" />
+				<ref bean="queryTranslatorQp" />
+				<ref bean="queryExecutorQp" />
+				<ref bean="countFinalizerQp" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Initializer -->
+
+	<bean id="initializerQp"
+		class="edu.utah.further.ds.impl.service.query.processor.InitializerQp"
+		p:delegate-ref="defaultInitializer" scope="prototype" />
+		
+	<util:list id="resultMarshalPackages">
+		<value>edu.utah.further.ds.api.results</value>
+		<value>edu.utah.further.ds.openmrs.model.v1_9.domain</value>
+	</util:list>
+	
+	<util:list id="resultUnmarshalPackages">
+		<value>edu.utah.further.ds.api.results</value>
+		<value>edu.utah.further.ds.further.model.impl.domain</value>
+	</util:list>
+
+	<!-- Preconfigured/Named attributes for request chain -->
+	<util:map id="namedAttributes" key-type="edu.utah.further.ds.api.util.AttributeName">
+		<entry key="SESSION_FACTORY" value-ref="sessionFactory" />
+		<entry key="SEARCH_QUERY_PKG" value="" />
+		<entry key="RESULT_CONTEXT" value-ref="resultContext" />
+		<entry key="RESULT_MARSHAL_PKGS" value-ref="resultMarshalPackages" />
+		<entry key="RESULT_UNMARSHAL_PKGS" value-ref="resultUnmarshalPackages" />
+		<entry key="RESULT_TRANSLATION" value="result/frtCall.xq" />
+		<entry key="QUERY_TRANSLATION" value="query/fqtCall.xq" />
+		<entry key="QUERY_SCHEMA"
+			value="edu/utah/further/core/query/schema/further-searchquery-1.0.xsd" />
+		<entry key="DS_TYPE"
+			value="#{T(edu.utah.further.ds.api.util.DatasourceType).DATABASE}" />
+		<entry key="ID_RESOLUTION_TYPE"
+			value="#{T(edu.utah.further.fqe.ds.api.domain.IdentityResolutionType).PRE_RESOLVED}" />
+	</util:map>
+
+	<bean id="defaultInitializer"
+		class="edu.utah.further.ds.api.service.query.logic.DefaultInitializer">
+		<property name="namedAttributes" ref="namedAttributes" />
+		<property name="answerableService" ref="answerableService" />
+	</bean>
+
+	<bean id="resultContext" class="edu.utah.further.fqe.ds.api.to.ResultContextToImpl"
+		scope="prototype">
+		<property name="rootEntityClass"
+			value="edu.utah.further.ds.further.model.impl.domain.Person" />
+		<property name="transferObjectClass"
+			value="edu.utah.further.ds.further.model.impl.domain.Person" />
+	</bean>
+
+	<!-- Wired with unmarshal result attribute as this will come after Result 
+		Translator. This class will persist the translated results to the analytical 
+		model. -->
+
+	<bean id="persisterCreate"
+		class="edu.utah.further.ds.impl.service.query.logic.PersisterCreateImpl" />
+
+	<bean id="persistenceRp"
+		class="edu.utah.further.ds.impl.service.query.processor.PersistenceQp"
+		scope="prototype" p:sourceAttr-ref="unmarshallResultAttr"
+		p:resultAttr-ref="queryResultAttr" p:delegate-ref="persisterCreate" />
+
+</beans>

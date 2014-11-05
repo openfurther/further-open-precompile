@@ -1,0 +1,213 @@
+Copyright 2008-2013 FURTHeR Project
+This project includes software developed by the University of Utah.
+http://further.utah.edu/
+
+Licensed under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License. You may obtain a copy of the License at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the
+specific language governing permissions and limitations
+under the License.
+
+This project includes:
+
+  ActiveIO :: Core under The Apache Software License, Version 2.0
+  ActiveMQ :: Camel under The Apache Software License, Version 2.0
+  ActiveMQ :: Core under The Apache Software License, Version 2.0
+  ActiveMQ :: KahaDB under The Apache Software License, Version 2.0
+  ActiveMQ :: Pool under The Apache Software License, Version 2.0
+  ActiveMQ Protocol Buffers Implementation and Compiler under The Apache Software License, Version 2.0
+  Annotation 1.0 under The Apache Software License, Version 2.0
+  AntLR under BSD license
+  AOP alliance under Public Domain
+  Apache Camel EIP Utilities under The Apache Software License, Version 2.0
+  Apache CXF Bundle Jar under The Apache Software License, Version 2.0
+  Apache CXF WS Support under The Apache Software License, Version 2.0
+  Apache Geronimo JAX-WS Spec 2.2 under The Apache Software License, Version 2.0
+  Apache Log4j under The Apache Software License, Version 2.0
+  Apache Neethi under The Apache Software License, Version 2.0
+  Apache POI under The Apache Software License, Version 2.0
+  Apache Santuario under The Apache Software License, Version 2.0
+  Apache Velocity under The Apache Software License, Version 2.0
+  Apelon Beans under Apache Software License 2.0
+  Apelon Classifier under Apache Software License 2.0
+  Apelon Common under Apache Software License 2.0
+  Apelon DAG under Apache Software License 2.0
+  Apelon DTS under The Apache Software License, Version 2.0
+  Apelon DTS Applications under Apache Software License 2.0
+  Apelon DTS Core under Apache Software License 2.0
+  Apelon Graph under Apache Software License 2.0
+  Apelon Matchpack under Apache Software License 2.0
+  Apelon Message under Apache Software License 2.0
+  Apelon Modular Classifier under Apache Software License 2.0
+  Apelon Selector and Extractor under Apache Software License 2.0
+  Apelon Server under Apache Software License 2.0
+  Apelon SOAP under Apache Software License 2.0
+  Apelon Wizard under Apache Software License 2.0
+  apelon-tqlutil under Apache License, Version 2.0
+  asm under ASM License
+  AspectJ runtime under Eclipse Public License - v 1.0
+  AspectJ weaver under Eclipse Public License - v 1.0
+  c3p0:JDBC DataSources/Resource Pools under GNU LESSER GENERAL PUBLIC LICENSE
+  Camel :: Core under The Apache Software License, Version 2.0
+  Camel :: JAXB under The Apache Software License, Version 2.0
+  Camel :: JMS under The Apache Software License, Version 2.0
+  Camel :: JUEL under The Apache Software License, Version 2.0
+  Camel :: Spring under The Apache Software License, Version 2.0
+  cglib under Apache License, Version 2.0
+  Code Generation Library under ASF 2.0
+  com.springsource.javax.management.j2ee under Apache License, Version 2.0
+  Commons Codec under The Apache Software License, Version 2.0
+  Commons DBCP under The Apache Software License, Version 2.0
+  Commons IO under The Apache Software License, Version 2.0
+  Commons Lang under The Apache Software License, Version 2.0
+  Commons Logging under The Apache Software License, Version 2.0
+  Commons Management under Apache License, Version 2.0
+  Commons Math under The Apache Software License, Version 2.0
+  Commons Net under The Apache Software License, Version 2.0
+  Commons Pool under The Apache Software License, Version 2.0
+  commons-collections under Apache License, Version 2.0
+  CoR Framework under The Apache Software License, Version 2.0
+  Core API Support under The Apache Software License, Version 2.0
+  Core Metadata API under The Apache Software License, Version 2.0
+  Core Utilities under The Apache Software License, Version 2.0
+  Core XML Utilities under The Apache Software License, Version 2.0
+  Core XQuery Utilities under The Apache Software License, Version 2.0
+  Data Source API under The Apache Software License, Version 2.0
+  Data Source FQE Testing under The Apache Software License, Version 2.0
+  Data Source Implementation under The Apache Software License, Version 2.0
+  Data Source JMS Support under The Apache Software License, Version 2.0
+  Data Source Model: OMOP under The Apache Software License, Version 2.0
+  Data source Persistence under The Apache Software License, Version 2.0
+  Data Source Testing Framework under The Apache Software License, Version 2.0
+  dom4j under BSD style license
+  Dough Lea's util.concurrent package under Public domain, Sun Microsoystems
+  DTS Service API under The Apache Software License, Version 2.0
+  DTS Service Impl under The Apache Software License, Version 2.0
+  DTS Web Service API under The Apache Software License, Version 2.0
+  DTS Web Services under The Apache Software License, Version 2.0
+  dtsmc_xml under Apache License, Version 2.0
+  EasyMock under Apache 2
+  Ehcache Core under The Apache Software License, Version 2.0
+  Expression Language 1.0 under The Apache Software License, Version 2.0
+  Federated Linking API under The Apache Software License, Version 2.0
+  Federated Linking Implementation under The Apache Software License, Version 2.0
+  FindBugs-jsr305 under The Apache Software License, Version 2.0
+  FQE API under The Apache Software License, Version 2.0
+  FQE Data Source API under The Apache Software License, Version 2.0
+  FQE Implementation under The Apache Software License, Version 2.0
+  FQE Logical Model API under The Apache Software License, Version 2.0
+  FQE Logical Model Implementation under The Apache Software License, Version 2.0
+  Generic database support under The Apache Software License, Version 2.0
+  Generic WS Support under The Apache Software License, Version 2.0
+  Groovy under The Apache Software License, Version 2.0
+  Guava: Google Core Libraries for Java under The Apache Software License, Version 2.0
+  Hamcrest Core under New BSD License
+  Hamcrest library under New BSD License
+  Hibernate Commons Annotations under GNU LESSER GENERAL PUBLIC LICENSE
+  Hibernate Core under GNU Lesser General Public License
+  HttpClient under Apache License
+  icu4j under MIT License
+  J2EE Management 1.1 under The Apache Software License, Version 2.0
+  JASYPT: Java Simplified Encryption under The Apache Software License, Version 2.0
+  Java Rest Annotations under The Apache Software License, Version 2.0
+  Java Transaction API under Commons Development and Distribution License, Version 1.0
+  Java Unified Expression Language under The Apache Software License, Version 2.0
+  JavaMail 1.4 under The Apache Software License, Version 2.0
+  Javassist under MPL 1.1 or LGPL 2.1
+  JAXB XJC under CDDL 1.1 or GPL2 w/ CPE
+  jaxb-api under Commons Development and Distribution License, Version 1.0
+  jaxb-impl under Commons Development and Distribution License, Version 1.0
+  jaxen under Jaxen License
+  JCL 1.1.1 implemented over SLF4J under MIT License
+  jdom under JDOM License
+  Jettison under Apache License, Version 2.0
+  Jetty :: Continuation under Apache Software License - Version 2.0 or Eclipse Public License - Version 1.0
+  Jetty :: Http Utility under Apache Software License - Version 2.0 or Eclipse Public License - Version 1.0
+  Jetty :: IO Utility under Apache Software License - Version 2.0 or Eclipse Public License - Version 1.0
+  Jetty :: Security under Apache Software License - Version 2.0 or Eclipse Public License - Version 1.0
+  Jetty :: Server Core under Apache Software License - Version 2.0 or Eclipse Public License - Version 1.0
+  Jetty :: Utilities under Apache Software License - Version 2.0 or Eclipse Public License - Version 1.0
+  JGraphT under GNU Lesser General Public License Version 2.1, February 1999
+  JMS 1.1 under The Apache Software License, Version 2.0
+  Joda time under Apache 2
+  JPA 2.0 API under LGPL, v2.1
+  jsr311-api under CDDL License
+  JTA under The Apache Software License, Version 2.0
+  JUnit under Common Public License Version 1.0
+  larvalabs collections under Apache License V2.0
+  Mathematical Utilities under The Apache Software License, Version 2.0
+  MDR Data Layer - Common under The Apache Software License, Version 2.0
+  MDR Service API under The Apache Software License, Version 2.0
+  MDR Service Commons under The Apache Software License, Version 2.0
+  MDR Service Database under The Apache Software License, Version 2.0
+  MDR Service Mock Impl under The Apache Software License, Version 2.0
+  MDR Web Service API under The Apache Software License, Version 2.0
+  MDR Web Services under The Apache Software License, Version 2.0
+  MIME streaming extension under COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0 or GPLv2 with classpath exception
+  MPI API under The Apache Software License, Version 2.0
+  MPI Implementation under The Apache Software License, Version 2.0
+  MXP1: Xml Pull Parser 3rd Edition (XPP3) under Indiana University Extreme! Lab Software License, vesion 1.1.1 or Public Domain or Apache Software License, version 1.1
+  Objenesis under Apache 2
+  OMOP v2 Data Source Adapter under The Apache Software License, Version 2.0
+  Open Data Source Adapters under The Apache Software License, Version 2.0
+  OpenSAML-J under Apache 2
+  OpenWS under Apache 2
+  Oracle Database Support under The Apache Software License, Version 2.0
+  org.osgi.core under Apache License, Version 2.0
+  Quartz Enterprise Job Scheduler under Apache 2.0
+  Query Framework under The Apache Software License, Version 2.0
+  QUnit under The Apache Software License, Version 2.0
+  Rhino under Mozilla Public License
+  saaj-api under Commons Development and Distribution License, Version 1.0
+  saaj-impl under Dual license consisting of the CDDL v1.1 and GPL v2
+  saxonhe under Mozilla Public License, Version 1.1
+  Security API under The Apache Software License, Version 2.0
+  Security Implementation under The Apache Software License, Version 2.0
+  Servlet 2.5 under The Apache Software License, Version 2.0
+  servlet-api under Commons Development and Distribution License, Version 1.0
+  SLF4J API Module under MIT License
+  SLF4J LOG4J-12 Binding under MIT License
+  Spock Framework - Core Module under The Apache Software License, Version 2.0
+  Spock Framework - Spring Module under The Apache Software License, Version 2.0
+  Spring Security - Core under The Apache Software License, Version 2.0
+  spring-aop under Apache License, Version 2.0
+  spring-asm under Apache License, Version 2.0
+  spring-aspects under Apache License, Version 2.0
+  spring-beans under Apache License, Version 2.0
+  spring-context under Apache License, Version 2.0
+  spring-context-support under Apache License, Version 2.0
+  spring-core under Apache License, Version 2.0
+  spring-expression under Apache License, Version 2.0
+  spring-jdbc under Apache License, Version 2.0
+  spring-jms under Apache License, Version 2.0
+  spring-orm under Apache License, Version 2.0
+  spring-oxm under Apache License, Version 2.0
+  spring-test under Apache License, Version 2.0
+  spring-tx under Apache License, Version 2.0
+  stax-utils under BSD
+  Stax2 API under The BSD License
+  Streaming API for XML (STAX API 1.0) under The Apache Software License, Version 2.0
+  Testing Framework under The Apache Software License, Version 2.0
+  Web Services Metadata 2.0 under The Apache Software License, Version 2.0
+  Woodstox under The Apache Software License, Version 2.0
+  WSDL4J under CPL
+  WSS4J under The Apache Software License, Version 2.0
+  xalan under Apache License, Version 2.0
+  Xalan Java Serializer under The Apache Software License, Version 2.0
+  xercesImpl under Apache License, Version 2.0
+  XML Commons External Components XML APIs under The Apache Software License, Version 2.0
+  XML Commons Resolver Component under The Apache Software License, Version 2.0
+  XmlBeans under The Apache Software License, Version 2.0
+  xmlParserAPIs under Apache License, Version 2.0
+  XmlSchema Core under The Apache Software License, Version 2.0
+  XMLTooling-J under Apache 2
+  xom under LGPL
+  xqj-api under Commons Development and Distribution License, Version 1.0
+  xstream under BSD license

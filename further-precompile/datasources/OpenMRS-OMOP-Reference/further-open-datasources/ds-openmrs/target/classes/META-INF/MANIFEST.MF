@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1411446296803
+Build-Jdk: 1.7.0_65
+Built-By: rich
+Bundle-Blueprint: META-INF/blueprint/*-osgi*.xml,META-INF/blueprint/*-co
+ ntext*.xml
+Bundle-Description: Data Source Model: OpenMRS
+Bundle-DocURL: http://healthsciences.utah.edu/avpit/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: further-ds-openmrs
+Bundle-SymbolicName: edu.utah.further.ds.openmrs
+Bundle-Vendor: Office of the AVP for Health Sci. IT
+Bundle-Version: 1.4.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: edu.utah.further.ds.openmrs.model.v1_9.domain;uses:="jav
+ ax.xml.bind.annotation,edu.utah.further.core.xml.jaxb.adapter,javax.xml
+ .bind.annotation.adapters,javax.persistence,edu.utah.further.core.api.d
+ ata,org.hibernate.annotations";version="1.4.1.SNAPSHOT"
+Import-Package: edu.utah.further.core.api.data;version="[1.4,2)",edu.uta
+ h.further.core.xml.jaxb.adapter;version="[1.4,2)",javassist.util.proxy;
+ resolution:=optional,javax.persistence;resolution:=optional,javax.persi
+ stence.spi;resolution:=optional,javax.xml.bind.annotation,javax.xml.bin
+ d.annotation.adapters,org.hibernate;resolution:=optional,org.hibernate.
+ annotations;resolution:=optional,org.hibernate.cfg;resolution:=optional
+ ,org.hibernate.hql.ast;resolution:=optional,org.hibernate.proxy;resolut
+ ion:=optional,org.hibernate.type;resolution:=optional
+Spring-Context: META-INF/spring/*-all.xml;publish-context:=false
+Tool: Bnd-1.50.0

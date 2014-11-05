@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource xmlns="http://hsc.utah.edu/kr/coreTypes/1.0" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://hsc.utah.edu/kr/coreTypes/1.0 ${server.mdr.ws}${path.mdr.ws.resource.path}/kr/dataSource.xsd">
+  <header resourceType="content" resourceId="613" 
+          resourceStatusCd="Active" resourceVersion="1" 
+          resourceLabel="OMOP Version 2 Data Source Content" resourceDisplayLabel="OMOP Version 2 Data Source">
+		<resourceAssetLink assetLabel="OMOP Version 2 Data Source" assetId="913"/>
+		<createdBy lastName="Mo" firstName="Peter"/>
+		<custodian lastName="Mo" firstName="Peter"/>
+		<contextOfUse>
+			<topical preferredLabel="Demographics"/>
+			<topical preferredLabel="Diagnoses"/>
+			<topical preferredLabel="Laboratory Results"/>
+			<topical preferredLabel="Medication Orders"/>
+			<topical preferredLabel="Procedures"/>
+		</contextOfUse>
+	</header>
+	<body name="OMOPv2" dataSourceType="RelationalDatabase">
+		<description>The Schultz Cancer Repository houses various cancer centric health information in an OMOP-V2 format.</description>
+		<location name="Schultz Cancer Repository"/>
+		<dataStewards>
+			<dataSteward lastName="Mo" firstName="Peter" title="Data Architect">
+				<contact contactTypeContext="Work" contactType="email" contactString="peter.mo@utah.edu"/>
+				<organization>University of Utah Health Sciences BMIC</organization>
+			</dataSteward>
+		</dataStewards>
+		<contributingSystems>	
+			<system name="Observational Medical Outcomes Partnership">
+				<systemContext>
+					<spatial preferredLabel="Schultz Cancer Repository"/>
+					<temporal startDateValue="2013" startDateUnits="Year" endDateValue="present" endDateUnits="Year"/>
+				</systemContext>
+			</system>
+		</contributingSystems>
+		<accessPolicy>
+			<accessPolicyDescription>Please contact the data steward for access policy information.</accessPolicyDescription>
+		</accessPolicy>
+	</body>
+</dataSource>

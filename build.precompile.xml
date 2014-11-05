@@ -1,0 +1,472 @@
+<project name="edu.utah.further.precompile" default="datasource-precompile">
+
+    <property environment="env"/>
+    <property file="build.properties"/>
+
+    <!-- Check for directory existence: ${further.reference.dir}. Contents assumed to be valid -->
+    <target name="dir-exists-reference">
+         <available file="${reference.further.dir}" property="reference.exists"/>
+    </target>
+    <target name="reference-exists-fail" depends="dir-exists-reference" unless="reference.exists">
+         <fail message="Directory ${reference.further.dir} must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-config/further-core/demo -->
+    <target name="dir-exists-demo">
+         <available file="${custom.datasource.dir}/further-open-config/further-core/demo" property="demo.exists"/>
+    </target>
+    <target name="demo-exists-fail" depends="dir-exists-demo" unless="demo.exists">
+         <fail message="Directory ${custom.datasource.dir}/further-open-config/further-core/demo must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-datasources/ds-openmrs -->
+    <target name="dir-exists-ds-openmrs">
+         <available file="${custom.datasource.dir}/further-open-datasources/ds-openmrs" property="ds.openmrs.exists"/>
+    </target>
+    <target name="ds-openmrs-exists-fail" depends="dir-exists-ds-openmrs" unless="ds.openmrs.exists">
+         <fail message="Directory ${custom.datasource.dir}/further-open-datasources/ds-openmrs must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-datasources/ds-openmrsv1_9-adapter -->
+    <target name="dir-exists-ds-openmrsv1_9-adapter">
+         <available file="${custom.datasource.dir}/further-open-datasources/ds-openmrsv1_9-adapter" property="ds.openmrsv1_9.adapter.exists"/>
+    </target>
+    <target name="ds-openmrsv1_9-adapter-exists-fail" depends="dir-exists-ds-openmrsv1_9-adapter" unless="ds.openmrsv1_9.adapter.exists">
+         <fail message="Directory ${custom.datasource.dir}/further-open-datasources/ds-openmrsv1_9-adapter must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-datasources/ds-omop -->
+    <target name="dir-exists-ds-omop">
+         <available file="" property="ds.omop.exists"/>
+    </target>
+    <target name="ds-omop-exists-fail" depends="dir-exists-ds-omop" unless="ds.omop.exists">
+         <fail message="Directory ${custom.datasource.dir}/further-open-datasources/ds-omop must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-datasources/ds-omopv2-adapter -->
+    <target name="dir-exists-ds-omopv2-adapter">
+         <available file="" property="ds.omopv2.adapter.exists"/>
+    </target>
+    <target name="ds-omopv2-adapter-exists-fail" depends="dir-exists-ds-omopv2-adapter" unless="ds.omopv2.adapter.exists">
+         <fail message="Directory ${custom.datasource.dir}/further-open-datasources/ds-omopv2-adapter must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service -->
+    <target name="dir-exists-mpi-service">
+        <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service" property="mpi.service.exists"/>
+    </target>
+    <target name="mpi-service-exists-fail" depends="dir-exists-mpi-service" unless="mpi.service.exists">
+        <fail message="Directory ${custom.datasource.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service must exist" />
+    </target> 
+
+    <!-- Check for directory existence: ${custom.datasource.dir}/further-open-datasources -->
+    <target name="dir-exists-datasources">
+         <available file="" property="datasources.exists"/>
+    </target>
+    <target name="datasources-exists-fail" depends="dir-exists-datasources" unless="datasources.exists">
+         <fail message="Directory ${custom.datasource.dir}/further-open-datasources must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/custom.datasource.properties -->
+    <target name="file-exists-custom">
+         <available file="${custom.datasource.dir}/custom.datasource.properties" property="custom.exists"/>
+    </target>
+    <target name="custom-exists-fail" depends="file-exists-custom" unless="custom.exists">
+         <fail message="File ${custom.datasource.dir}/custom.datasource.properties must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/dts/dts-api/src/main/java/edu/utah/further/dts/api/util/HardcodedNamespace.java -->
+    <target name="file-exists-hardcoded">
+         <available file="${custom.datasource.dir}/further-open-core/dts/dts-api/src/main/java/edu/utah/further/dts/api/util/HardcodedNamespace.java" property="hardcoded.exists"/>
+    </target>
+    <target name="hardcoded-exists-fail" depends="file-exists-hardcoded" unless="hardcoded.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/dts/dts-api/src/main/java/edu/utah/further/dts/api/util/HardcodedNamespace.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/ds/ds-impl/src/test/java/edu/utah/further/ds/impl/service/query/logic/UTestAssociatedResultsAttacher.java -->
+    <target name="file-exists-utest-attach">
+         <available file="${custom.datasource.dir}/further-open-core/ds/ds-impl/src/test/java/edu/utah/further/ds/impl/service/query/logic/UTestAssociatedResultsAttacher.java" property="utest.attach.exists"/>
+    </target>
+    <target name="utest-attach-exists-fail" depends="file-exists-utest-attach" unless="utest.attach.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/ds/ds-impl/src/test/java/edu/utah/further/ds/impl/service/query/logic/UTestAssociatedResultsAttacher.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-impl/src/test/java/edu/utah/further/fqe/impl/service/query/UTestAssociatedResultService.java -->
+    <target name="file-exists-utest-assoc">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-impl/src/test/java/edu/utah/further/fqe/impl/service/query/UTestAssociatedResultService.java" property="utest.assoc.exists"/>
+    </target>
+    <target name="utest-assoc-exists-fail" depends="file-exists-utest-assoc" unless="utest.assoc.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-impl/src/test/java/edu/utah/further/fqe/impl/service/query/UTestAssociatedResultService.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/dts/dts-impl/src/main/java/edu/utah/further/dts/impl/util/DtsTestingNames.java -->
+    <target name="file-exists-dtstestingnames">
+         <available file="${custom.datasource.dir}/further-open-core/dts/dts-impl/src/main/java/edu/utah/further/dts/impl/util/DtsTestingNames.java" property="dtstestingnames.exists"/>
+    </target>
+    <target name="dtstestingnames-exists-fail" depends="file-exists-dtstestingnames" unless="dtstestingnames.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/dts/dts-impl/src/main/java/edu/utah/further/dts/impl/util/DtsTestingNames.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/i2b2-model-impl-test-context-services.xml -->
+    <target name="file-exists-i2b2-model-context">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/i2b2-model-impl-test-context-services.xml" property="i2b2.model.context.exists"/>
+    </target>
+    <target name="i2b2-model-context-exists-fail" depends="file-exists-i2b2-model-context" unless="i2b2.model.context.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/i2b2-model-impl-test-context-services.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-export.xml -->
+    <target name="file-exists-fqe-model-export">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-export.xml" property="fqe.model.export.exists"/>
+    </target>
+    <target name="fqe-model-export-exists-fail" depends="file-exists-fqe-model-export" unless="fqe.model.export.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-export.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-histogram.xml -->
+    <target name="file-exists-fqe-model-hist">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-histogram.xml" property="fqe.model.hist.exists"/>
+    </target>
+    <target name="fqe-model-hist-exists-fail" depends="file-exists-fqe-model-export" unless="fqe.model.hist.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-histogram.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-export.xml -->
+    <target name="file-exists-fqe-model-base">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patientdimensions.xml" property="fqe.model.base.exists"/>
+    </target>
+    <target name="fqe-model-base-exists-fail" depends="file-exists-fqe-model-base" unless="fqe.model.base.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patientdimensions.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/main/resources/META-INF/spring/fqe-ds-further-model-context-datasource.xml -->
+    <target name="file-exists-fqe-model-context">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/main/resources/META-INF/spring/fqe-ds-further-model-context-datasource.xml" property="fqe.model.context.exists"/>
+    </target>
+    <target name="fqe-model-context-exists-fail" depends="file-exists-fqe-model-context" unless="fqe.model.context.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/main/resources/META-INF/spring/fqe-ds-further-model-context-datasource.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/fqe/fqe-impl/src/test/resources/dataset-ds-fqe.xml -->
+    <target name="file-exists-dataset-ds-fqe">
+         <available file="${custom.datasource.dir}/further-open-core/fqe/fqe-impl/src/test/resources/dataset-ds-fqe.xml" property="dataset.ds.fqe.exists"/>
+    </target>
+    <target name="dataset-ds-fqe-exists-fail" depends="file-exists-dataset-ds-fqe" unless="dataset.ds.fqe.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/fqe/fqe-impl/src/test/resources/dataset-ds-fqe.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/java/edu/utah/further/i2b2/model/impl/fixture/I2b2ModelImplFixture.java -->
+    <target name="file-exists-i2b2-model">
+         <available file="${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/java/edu/utah/further/i2b2/model/impl/fixture/I2b2ModelImplFixture.java" property="i2b2.model.exists"/>
+    </target>
+    <target name="i2b2-model-exists-fail" depends="file-exists-i2b2-model" unless="i2b2.model.exists">
+         <fail message="File ${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/java/edu/utah/further/i2b2/model/impl/fixture/I2b2ModelImplFixture.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${reference.further.dir}/further-open-core/i2b2/i2b2-query/src/main/java/edu/utah/further/i2b2/query/criteria/service/impl/I2b2SearchCriterionBuilder.java -->
+    <target name="file-exists-i2b2-search">
+         <available file="${reference.further.dir}/further-open-core/i2b2/i2b2-query/src/main/java/edu/utah/further/i2b2/query/criteria/service/impl/I2b2SearchCriterionBuilder.java" property="i2b2.search.exists"/>
+    </target>
+    <target name="i2b2-search-exists-fail" depends="file-exists-i2b2-search" unless="i2b2.search.exists">
+         <fail message="File ${reference.further.dir}/further-open-core/i2b2/i2b2-query/src/main/java/edu/utah/further/i2b2/query/criteria/service/impl/I2b2SearchCriterionBuilder.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${reference.further.dir}/further-open-core/mdr/mdr-ws/src/test/java/edu/utah/further/mdr/ws/impl/domain/UTestMarshalEntities.java -->
+    <target name="file-exists-mdr-entities">
+         <available file="${reference.further.dir}/further-open-core/mdr/mdr-ws/src/test/java/edu/utah/further/mdr/ws/impl/domain/UTestMarshalEntities.java" property="mdr.entities.exists"/>
+    </target>
+    <target name="mdr-entities-exists-fail" depends="file-exists-mdr-entities" unless="mdr.entities.exists">
+         <fail message="File ${reference.further.dir}/further-open-core/mdr/mdr-ws/src/test/java/edu/utah/further/mdr/ws/impl/domain/UTestMarshalEntities.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/mdr/mdr-ws-api/src/test/java/edu/utah/further/mdr/ws/api/to/UTestMarshalAssetAssociations.java -->
+    <target name="file-exists-mdr-assoc">
+         <available file="${custom.datasource.dir}/further-open-core/mdr/mdr-ws-api/src/test/java/edu/utah/further/mdr/ws/api/to/UTestMarshalAssetAssociations.java" property="mdr.assoc.exists"/>
+    </target>
+    <target name="mdr-assoc-exists-fail" depends="file-exists-mdr-assoc" unless="mdr.assoc.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/mdr/mdr-ws-api/src/test/java/edu/utah/further/mdr/ws/api/to/UTestMarshalAssetAssociations.java must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml -->
+    <target name="file-exists-xquery-context">
+         <available file="${custom.datasource.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml" property="xquery.context.exists"/>
+    </target>
+    <target name="xquery-context-exists-fail" depends="file-exists-xquery-context" unless="xquery.context.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml must exist" />
+    </target> 
+
+    <!-- Check for file existence: ${reference.further.dir}/further-open-core/party3/party3-apelon/src/main/java/edu/utah/further/party3/apelon/internal/ApelonHardcodedNamespaceForTests.java -->
+    <target name="file-exists-apelon">
+         <available file="${reference.further.dir}/further-open-core/party3/party3-apelon/src/main/java/edu/utah/further/party3/apelon/internal/ApelonHardcodedNamespaceForTests.java" property="apelon.exists"/>
+    </target>
+    <target name="apelon-exists-fail" depends="file-exists-apelon" unless="apelon.exists">
+         <fail message="File ${reference.further.dir}/further-open-core/party3/party3-apelon/src/main/java/edu/utah/further/party3/apelon/internal/ApelonHardcodedNamespaceForTests.java must exist" />
+    </target> 
+
+    <!-- Core Datasource customization target.  Add other customization types as new targets -->
+    <target name="datasource-precompile" 
+            depends="reference-exists-fail,demo-exists-fail,ds-openmrs-exists-fail,ds-omop-exists-fail,mpi-service-exists-fail,datasources-exists-fail,custom-exists-fail" 
+            description="Site-specific customizations for datasources">
+
+         <!-- add core-qunit test dependency for Utah datasources, null for OpenFurther -->
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-test/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-23@ "/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-test/pom.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+       <!-- Add new source files from ${custom.datasource.dir} -->
+
+        <echo message="Adding files from ${custom.datasource.dir}/further-open-config/further-core/demo" />
+        <copy todir="${reference.further.dir}/further-open-config/further-core/demo">
+             <fileset dir="${custom.datasource.dir}/further-open-config/further-core/demo" 
+                      excludes=""/>
+        </copy>
+
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-datasources/ds-openmrs" />
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-datasources/ds-omop" />
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-datasources/ds-openmrsv1_9-adapter" />
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-datasources/ds-omop-v2-adapter" />
+        <copy todir="${reference.further.dir}/further-open-datasources">
+             <fileset dir="${custom.datasource.dir}/further-open-datasources">
+                  <include name="**" />
+	     </fileset>
+        </copy>
+
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-xquery/src/test/resources/query-translator/openmrsv1_9" />
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-xquery/src/test/resources/query-translator/omop-v2" />
+        <copy todir="${reference.further.dir}/further-open-xquery/src/test/resources/query-translator">
+             <fileset dir="${custom.datasource.dir}/further-open-xquery/src/test/resources/query-translator">
+                  <include name="**" />
+	     </fileset>
+        </copy>
+
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-xquery/src/test/resources/result-translator/openmrsv1_9" />
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-xquery/src/test/resources/result-translator/omop-v2" />
+        <copy todir="${reference.further.dir}/further-open-xquery/src/test/resources/result-translator">
+             <fileset dir="${custom.datasource.dir}/further-open-xquery/src/test/resources/result-translator">
+                  <include name="**" />
+	     </fileset>
+        </copy>
+
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-xquery/src/test/groovy/edu/utah/further/ds/openmrs" />
+        <echo message="Adding directory ${custom.datasource.dir}/further-open-xquery/src/test/groovy/edu/utah/further/ds/omop" />
+         <copy todir="${reference.further.dir}/further-open-xquery/src/test/groovy/edu/utah/further/ds">
+             <fileset dir="${custom.datasource.dir}/further-open-xquery/src/test/groovy/edu/utah/further/ds">
+                  <include name="**" />
+	     </fileset>
+        </copy>
+
+        <echo message="Adding files from ${custom.datasource.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service" />
+        <copy todir="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service">
+             <fileset dir="${custom.datasource.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service" 
+                      excludes=""/>
+        </copy>
+
+        <echo message="Adding files from ${custom.datasource.dir}/further-open-datasources" />
+        <copy todir="${reference.further.dir}/further-open-datasources">
+             <fileset dir="${custom.datasource.dir}/further-open-datasources" excludes=""/>
+        </copy>
+
+        <!-- Replace all @DSCUSTOM-NN@ tokens with values in ${custom.datasource.dir}/custom.datasource.properties: -->
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-config/further-core/demo/further.core.util.cfg" />
+        <echo message="replacing tokens @DSCUSTOM-18@ @DSCUSTOM-19@"/>
+        <replace file="${reference.further.dir}/further-open-config/further-core/demo/further.core.util.cfg" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/core/core-test/src/main/resources/META-INF/namespaces/namespaces-standard.properties" />
+        <echo message="replacing tokens @DSCUSTOM-01@ @DSCUSTOM-02@"/>
+        <replace file="${reference.further.dir}/further-open-core/core/core-test/src/main/resources/META-INF/namespaces/namespaces-standard.properties" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/core/core-util/src/main/resources/META-INF/spring/core-util-osgi-import.xml" />
+        <echo message="replacing tokens @DSCUSTOM-20@ @DSCUSTOM-21@"/>
+        <replace file="${reference.further.dir}/further-open-core/core/core-util/src/main/resources/META-INF/spring/core-util-osgi-import.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/src/main/resources/META-INF/spring/fqe-impl-context-services.xml" />
+        <echo message="replacing token @DSCUSTOM-06@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/src/main/resources/META-INF/spring/fqe-impl-context-services.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/pom.xml" />
+        <echo message="replacing token @DSCUSTOM-10@"/>
+        <replace file="${reference.further.dir}/further-open-core/pom.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-osgi/osgi-core-features/src/main/resources/feature.xml" />
+        <echo message="replacing token @DSCUSTOM-13@"/>
+        <replace file="${reference.further.dir}/further-open-osgi/osgi-core-features/src/main/resources/feature.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-osgi/osgi-datasources-features/src/main/resources/feature.xml" />
+        <echo message="replacing tokens @DSCUSTOM-14@ @DSCUSTOM-15@"/>
+        <replace file="${reference.further.dir}/further-open-osgi/osgi-datasources-features/src/main/resources/feature.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-xquery/src/main/resources/query/fqt.xqm" />
+        <echo message="replacing tokens @DSCUSTOM-16@ @DSCUSTOM-17@ @DSCUSTOM-22@"/>
+        <replace file="${reference.further.dir}/further-open-xquery/src/main/resources/query/fqt.xqm" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <!-- Moved ds to datasources: echo message="Customizing file ${reference.further.dir}/further-open-core/ds/pom.xml" />
+        <echo message="replacing token @DSCUSTOM-03@"/>
+        <replace file="${reference.further.dir}/further-open-core/ds/pom.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace -->         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-api/pom.xml" />
+        <echo message="replacing token @DSCUSTOM-04@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-api/pom.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml" />
+        <echo message="replacing token @DSCUSTOM-05@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-07@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml" />
+        <echo message="replacing token @DSCUSTOM-08@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ws/pom.xml" />
+        <echo message="replacing token @DSCUSTOM-09@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ws/pom.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-i2b2/i2b2-webclient/src/main/webapp/i2b2/default.php" />
+        <echo message="replacing tokens @DSCUSTOM-11@ @DSCUSTOM-12@"/>
+        <replace file="${reference.further.dir}/further-open-i2b2/i2b2-webclient/src/main/webapp/i2b2/default.php" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/resources/patientdimensions.xml" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/resources/patientdimensions.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/resources/patient-dimensions-export.xml" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/resources/patient-dimensions-export.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/dts/dts-api/src/main/java/edu/utah/further/dts/api/util/HardcodedNamespace.java" />
+        <echo message="replacing token @DSCUSTOM-29@ @DSCUSTOM-30@"/>
+        <replace file="${reference.further.dir}/further-open-core/dts/dts-api/src/main/java/edu/utah/further/dts/api/util/HardcodedNamespace.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-impl/src/test/java/edu/utah/further/ds/impl/service/query/logic/UTestAssociatedResultsAttacher.java" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-impl/src/test/java/edu/utah/further/ds/impl/service/query/logic/UTestAssociatedResultsAttacher.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/src/test/java/edu/utah/further/fqe/impl/service/query/UTestAssociatedResultService.java" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/src/test/java/edu/utah/further/fqe/impl/service/query/UTestAssociatedResultService.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/dts/dts-impl/src/main/java/edu/utah/further/dts/impl/util/DtsTestingNames.java" />
+        <echo message="replacing token @DSCUSTOM-31@  @DSCUSTOM-32@ "/>
+        <replace file="${reference.further.dir}/further-open-core/dts/dts-impl/src/main/java/edu/utah/further/dts/impl/util/DtsTestingNames.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/main/resources/META-INF/spring/fqe-ds-further-model-context-datasource.xml" />
+        <echo message="replacing token @DSCUSTOM-24@ "/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/main/resources/META-INF/spring/fqe-ds-further-model-context-datasource.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/i2b2-model-impl-test-context-services.xml" />
+        <echo message="replacing token @DSCUSTOM-33@ "/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/i2b2-model-impl-test-context-services.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-export.xml" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-export.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-histogram.xml" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patient-dimensions-histogram.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patientdimensions.xml" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-model/fqe-ds-further-model/src/test/resources/patientdimensions.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/src/test/resources/dataset-ds-fqe.xml" />
+        <echo message="replacing token @DSCUSTOM-34@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/src/test/resources/dataset-ds-fqe.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/java/edu/utah/further/i2b2/model/impl/fixture/I2b2ModelImplFixture.java" />
+        <echo message="replacing token @DSCUSTOM-25@"/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-i2b2/src/test/java/edu/utah/further/i2b2/model/impl/fixture/I2b2ModelImplFixture.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/i2b2/i2b2-query/src/main/java/edu/utah/further/i2b2/query/criteria/service/impl/I2b2SearchCriterionBuilder.java" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/i2b2/i2b2-query/src/main/java/edu/utah/further/i2b2/query/criteria/service/impl/I2b2SearchCriterionBuilder.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/mdr/mdr-ws/src/test/java/edu/utah/further/mdr/ws/impl/domain/UTestMarshalEntities.java" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/mdr/mdr-ws/src/test/java/edu/utah/further/mdr/ws/impl/domain/UTestMarshalEntities.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/mdr/mdr-ws-api/src/test/java/edu/utah/further/mdr/ws/api/to/UTestMarshalAssetAssociations.java" />
+        <echo message="replacing token @DSCUSTOM-26@"/>
+        <replace file="${reference.further.dir}/further-open-core/mdr/mdr-ws-api/src/test/java/edu/utah/further/mdr/ws/api/to/UTestMarshalAssetAssociations.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml" />
+        <echo message="replacing token @DSCUSTOM-35@"/>
+        <replace file="${reference.further.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/party3/party3-apelon/src/main/java/edu/utah/further/party3/apelon/internal/ApelonHardcodedNamespaceForTests.java" />
+        <echo message="replacing token @DSCUSTOM-36@"/>
+        <replace file="${reference.further.dir}/further-open-core/party3/party3-apelon/src/main/java/edu/utah/further/party3/apelon/internal/ApelonHardcodedNamespaceForTests.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+    </target>
+</project>

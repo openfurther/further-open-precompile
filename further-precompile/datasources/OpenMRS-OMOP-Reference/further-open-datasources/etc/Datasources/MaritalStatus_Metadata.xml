@@ -1,0 +1,9 @@
+<div>
+   <h2>Definition</h2>
+   <p>Marital Status - A value representing the domestic partnership status of a person.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+   </ul>
+</div>

@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>edu.utah.further.ds</groupId>
+		<artifactId>ds-adapters-open</artifactId>
+		<version>1.4.3-SNAPSHOT</version>
+	</parent>
+	<packaging>bundle</packaging>
+	<artifactId>ds-omopv2-adapter</artifactId>
+        <version>1.4.3-SNAPSHOT</version>
+	<name>OMOP v2 Data Source Adapter</name>
+	<description>OMOP v2 Data Source Adapter</description>
+   
+	<!-- =========================================== -->
+	<!-- Externalized properties -->
+	<!-- =========================================== -->
+
+	<properties>
+		<shortName>adapter.omopv2</shortName>
+		<further.osgi.import.pkg>
+			javassist.util.proxy,
+			net.sf.cglib.proxy,
+			net.sf.cglib.core,
+			net.sf.cglib.reflect,
+			com.mchange.v2.c3p0,
+			oracle.jdbc;resolution:=optional,
+			javax.jms,
+			org.hibernate,
+			org.hibernate.annotations,
+			org.hibernate.cfg,
+			org.hibernate.proxy,
+			org.hibernate.hql.ast,
+			org.hibernate.type,
+			org.springframework.core,
+			org.springframework.context,
+			org.springframework.orm,
+			org.springframework.orm.hibernate3.support,
+			org.springframework.orm.hibernate3.annotation,
+			org.springframework.orm.hibernate3,
+			org.springframework.aop,
+			org.springframework.aop.framework,
+			org.springframework.aop.config,
+			org.springframework.aop.aspectj.annotation,
+			org.springframework.beans.factory.aspectj,
+			org.springframework.beans.factory.config,
+			org.springframework.aop.aspectj.autoproxy,
+			org.springframework.transaction.support,
+			org.springframework.transaction.aspectj,
+			org.springframework.transaction.annotation,
+			org.springframework.jdbc.support.lob,
+			org.springframework.dao.support,
+			org.springframework.context.weaving,
+			org.hsqldb,
+			org.aopalliance.aop,
+			org.aspectj.lang,
+			org.aspectj.lang.reflect,
+			org.aspectj.lang.annotation,
+			org.apache.activemq,
+			org.apache.activemq.spring,
+			org.apache.camel,
+			org.apache.camel.builder,
+			org.apache.camel.converter,
+			org.apache.camel.converter.*,
+			org.apache.camel.converter.jaxb,
+			org.apache.camel.component.event,
+			org.apache.camel.osgi,
+			org.apache.camel.spring,
+			org.apache.camel.impl,
+			org.apache.camel.spi,
+			org.apache.camel.model,
+			org.apache.camel.model.dataformat,
+			org.apache.camel.model.config,
+			org.apache.camel.component.jms,
+			org.osgi.framework,
+			org.jasypt.encryption.pbe;version="${jasypt.version}",
+			org.jasypt.encryption.pbe.config;version="${jasypt.version}",
+			org.jasypt.spring3.properties,
+			edu.utah.further.core.metadata.to,
+			edu.utah.further.fqe.ds.api.service,
+			edu.utah.further.fqe.ds.api.domain,
+			edu.utah.further.fqe.ds.api.to,
+			edu.utah.further.ds.api.domain,
+			edu.utah.further.ds.api.aspect,
+			edu.utah.further.ds.api.advice,
+			edu.utah.further.ds.api.results,
+			edu.utah.further.ds.api.annotation,
+			edu.utah.further.ds.api.service.metadata,
+			edu.utah.further.ds.api.service.query,
+			edu.utah.further.ds.api.service.query.processor,
+			edu.utah.further.ds.api.service.query.logic,
+			edu.utah.further.ds.api.lifecycle.controller,
+			edu.utah.further.ds.api.util,
+			edu.utah.further.ds.impl.service.metadata,
+			edu.utah.further.ds.impl.service.query.processor,
+			edu.utah.further.ds.impl.service.query.logic,
+			edu.utah.further.ds.impl.lifecycle,
+			edu.utah.further.ds.jms.lifecycle,
+			edu.utah.further.ds.impl.advice,
+			edu.utah.further.ds.jms.service.query.processor,
+			edu.utah.further.ds.omop.model.v2.domain,
+			edu.utah.further.ds.further.model.impl.domain,
+			edu.utah.further.core.api.chain,
+			edu.utah.further.core.api.context,
+			edu.utah.further.core.api.collections.page,
+			edu.utah.further.core.api.data,
+			edu.utah.further.core.chain,
+			edu.utah.further.core.util.math.random,
+			edu.utah.further.core.util.collections.page,
+			edu.utah.further.core.util.converter,
+			edu.utah.further.core.util.aop,
+			'=META-INF.core.util',
+			'=META-INF.ds.jms',
+			'=META-INF.ds.impl',
+			*
+		</further.osgi.import.pkg>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>edu.utah.further.ds</groupId>
+			<artifactId>ds-omop</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>

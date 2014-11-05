@@ -1,0 +1,11 @@
+<div>
+   <h2>Definition</h2>
+   <p>Laboratory Tests - The result of a laboratory test. The existence of a specific test may be queried or the specific value or value range for the test.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Cancer Repository (OMOP data source)</li>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+
+   </ul>
+</div>

@@ -1,0 +1,9 @@
+<div>
+   <h2>Definition</h2>
+   <p>Age - How long the person has existed since birth. Current age is calculated in whole years from the year of birth (current year - birth year). This does not imply the person is still alive.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+   </ul>
+</div>

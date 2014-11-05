@@ -1,0 +1,11 @@
+<div>
+   <h2>Definition</h2>
+   <p>Medication Order - An authorized health professional's request and instructions to have a medication or pharmaceutical product delivered to a patient.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Cancer Repository (OMOP data source)</li>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+
+   </ul>
+</div>

@@ -1,0 +1,10 @@
+<div>
+   <h2>Definition</h2>
+   <p>Demographics - The characteristics of human beings. Unless otherwise specified, demographic values represent the current values known in the data sources. See sub-categories under Demographics for examples of supported demographic attributes.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Cancer Repository (OMOP data source)</li>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+   </ul>
+</div>

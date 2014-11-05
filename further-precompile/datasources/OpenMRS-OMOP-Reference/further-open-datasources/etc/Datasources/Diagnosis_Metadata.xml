@@ -1,0 +1,11 @@
+<div>
+   <h2>Definition</h2>
+   <p>Diagnosis -The identification of the nature of an illness or other problem by examination of the symptoms.</p>
+   <h2>Datasources</h2>
+   <p>Available from the following datasources: </p>
+   <ul>
+	<li>Schultz Cancer Repository (OMOP data source)</li>
+	<li>Schultz Healthcare Systems (OpenMRS data source)</li>
+
+   </ul>
+</div>

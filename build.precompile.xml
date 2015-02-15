@@ -469,9 +469,27 @@
         </replace>         
 
         <!-- empty IdentifierServiceImpl.java customizations for OpenFurther -->
-        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-test/pom.xml" />
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service/IdentifierServiceImpl.java" />
         <echo message="replacing tokens @DSCUSTOM-37@ @DSCUSTOM-38@ @DSCUSTOM-39@ "/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service/IdentifierServiceImpl.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml"
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>
 

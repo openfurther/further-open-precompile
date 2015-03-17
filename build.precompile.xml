@@ -187,6 +187,14 @@
          <fail message="File ${custom.datasource.dir}/further-open-core/mdr/mdr-ws-api/src/test/java/edu/utah/further/mdr/ws/api/to/UTestMarshalAssetAssociations.java must exist" />
     </target> 
 
+    <!-- Check for file existence: ${custom.datasource.dir}/further-open-core/mdr/mdr-impl/src/main/java/edu/utah/further/mdr/impl/service/asset/AssetServiceImpl.java -->
+    <target name="file-exists-mdr-impl">
+         <available file="${custom.datasource.dir}/further-open-core/mdr/mdr-impl/src/main/java/edu/utah/further/mdr/impl/service/asset/AssetServiceImpl.java" property="mdr.impl.exists"/>
+    </target>
+    <target name="mdr-impl-exists-fail" depends="file-exists-mdr-impl" unless="mdr.impl.exists">
+         <fail message="File ${custom.datasource.dir}/further-open-core/mdr/mdr-impl/src/main/java/edu/utah/further/mdr/impl/service/asset/AssetServiceImpl.java must exist" />
+    </target> 
+
     <!-- Check for file existence: ${custom.datasource.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml -->
     <target name="file-exists-xquery-context">
          <available file="${custom.datasource.dir}/further-open-xquery/src/test/resources/open-xquery-test-context.xml" property="xquery.context.exists"/>
@@ -466,6 +474,66 @@
         <echo message="replacing token @DSCUSTOM-36@"/>
         <replace file="${reference.further.dir}/further-open-core/party3/party3-apelon/src/main/java/edu/utah/further/party3/apelon/internal/ApelonHardcodedNamespaceForTests.java" 
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <replace file="${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml" />
+        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/mdr/mdr-impl/src/main/java/edu/utah/further/mdr/impl/service/asset/AssetServiceImpl.java" />
+        <echo message="replacing tokens @DSCUSTOM-41@ @DSCUSTOM-42@"/>
+        <replace file="${reference.further.dir}/further-open-core/mdr/mdr-impl/src/main/java/edu/utah/further/mdr/impl/service/asset/AssetServiceImpl.java" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>         
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-api/src/main/java/edu/utah/further/fqe/ds/api/domain/IdentityResolutionType.java" />
+        <echo message="replacing tokens @DSCUSTOM-43@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-api/src/main/java/edu/utah/further/fqe/ds/api/domain/IdentityResolutionType.java"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml" />
+        <echo message="replacing tokens @DSCUSTOM-44@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-osgi-import.xml" />
+        <echo message="replacing tokens @DSCUSTOM-45@  @DSCUSTOM-46@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-osgi-import.xml"
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml" />
+        <echo message="replacing tokens @DSCUSTOM-47@ @DSCUSTOM-48@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml"
+                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/hibernate.properties" />
+        <echo message="replacing tokens @DSCUSTOM-49@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/hibernate.properties"
+                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-i2b2/i2b2-webclient/src/main/webapp/i2b2/duaContent.html" />
+        <echo message="replacing token @DSCUSTOM-50@"/>
+        <replace file="${reference.further.dir}/further-open-i2b2/i2b2-webclient/src/main/webapp/i2b2/duaContent.html" 
+                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
+        </replace>
+
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service/IdentifierServiceImpl.java" />
+        <echo message="replacing token @DSCUSTOM-51@ @DSCUSTOM-52@ @DSCUSTOM-53@"/>
+        <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service/IdentifierServiceImpl.java" 
+                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         
 
     </target>

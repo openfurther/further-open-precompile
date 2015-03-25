@@ -531,7 +531,7 @@
         </replace>
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service/IdentifierServiceImpl.java" />
-        <echo message="replacing token @DSCUSTOM-51@ @DSCUSTOM-52@ @DSCUSTOM-53@"/>
+        <echo message="replacing token @DSCUSTOM-51@ @DSCUSTOM-52@ @DSCUSTOM-53@ @DSCUSTOM-54@ @DSCUSTOM-55@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/java/edu/utah/further/fqe/mpi/impl/service/IdentifierServiceImpl.java" 
                   replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         

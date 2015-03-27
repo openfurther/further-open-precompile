@@ -333,7 +333,7 @@
         </replace -->         
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-api/pom.xml" />
-        <echo message="replacing token @DSCUSTOM-04@"/>
+        <echo message="replacing token @DSCUSTOM-40@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-api/pom.xml" 
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         
@@ -357,7 +357,7 @@
         </replace>         
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ws/pom.xml" />
-        <echo message="replacing token @DSCUSTOM-09@"/>
+        <echo message="replacing token @DSCUSTOM-40@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ws/pom.xml" 
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         

@@ -122,13 +122,13 @@
 			<artifactId>ds-omop</artifactId>
 		</dependency>
 
-	</dependencies>
-
                 <dependency>
                         <groupId>edu.utah.further.core</groupId>
                         <artifactId>core-qunit</artifactId>
                         <version>1.3.3</version>
                         <scope>test</scope>
                 </dependency>
+
+	</dependencies>
 
 </project>

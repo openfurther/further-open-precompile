@@ -3,11 +3,11 @@
 	<parent>
 		<groupId>edu.utah.further</groupId>
 		<artifactId>further</artifactId>
-		<version>1.4.3-SNAPSHOT</version>
+		<version>1.4.4-SNAPSHOT</version>
 	</parent>
         <groupId>edu.utah.further.osgi</groupId>
 	<artifactId>osgi-datasources-features</artifactId>
-  <version>1.4.3-SNAPSHOT</version>
+  <version>1.4.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Open Data Source Adapters</name>
 	<description>Open Data Source Adapters</description>

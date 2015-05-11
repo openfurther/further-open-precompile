@@ -3,11 +3,11 @@
 	<parent>
 		<groupId>edu.utah.further.ds</groupId>
 		<artifactId>ds-adapters-open</artifactId>
-		<version>1.4.3-SNAPSHOT</version>
+		<version>1.4.4-SNAPSHOT</version>
 	</parent>
 	<packaging>bundle</packaging>
 	<artifactId>ds-omopv2-adapter</artifactId>
-        <version>1.4.3-SNAPSHOT</version>
+        <version>1.4.4-SNAPSHOT</version>
 	<name>OMOP v2 Data Source Adapter</name>
 	<description>OMOP v2 Data Source Adapter</description>
    

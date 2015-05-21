@@ -120,6 +120,7 @@
 		<dependency>
 			<groupId>edu.utah.further.ds</groupId>
 			<artifactId>ds-openmrs</artifactId>
+			<version>1.4.3-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>

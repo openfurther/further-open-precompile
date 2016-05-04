@@ -5,8 +5,8 @@
 		<artifactId>further</artifactId>
 		<version>1.4.4-SNAPSHOT</version>
 	</parent>
-        <groupId>edu.utah.further.osgi</groupId>
-	<artifactId>osgi-datasources-features</artifactId>
+        <groupId>edu.utah.further.ds</groupId>
+        <artifactId>ds-adapters-open</artifactId>
   <version>1.4.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Open Data Source Adapters</name>

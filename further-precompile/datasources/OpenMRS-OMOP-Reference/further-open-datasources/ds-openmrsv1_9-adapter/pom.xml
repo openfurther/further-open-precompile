@@ -6,7 +6,6 @@
 		<version>1.4.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>ds-openmrsv1_9-adapter</artifactId>
-  <version>1.4.4-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<name>OpenMRS v1.9 Data Source Adapter</name>
 	<description>OpenMRS v1.9 Data Source Adapter</description>

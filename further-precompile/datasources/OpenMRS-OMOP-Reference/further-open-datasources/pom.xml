@@ -7,10 +7,24 @@
 	</parent>
         <groupId>edu.utah.further.ds</groupId>
         <artifactId>ds-adapters-open</artifactId>
-  <version>1.4.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Open Data Source Adapters</name>
 	<description>Open Data Source Adapters</description>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>edu.utah.further.ds</groupId>
+				<artifactId>ds-omop</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.utah.further.ds</groupId>
+				<artifactId>ds-openmrs</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 

@@ -302,12 +302,6 @@
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         
 
-        <echo message="Customizing file ${reference.further.dir}/further-open-core/pom.xml" />
-        <echo message="replacing token @DSCUSTOM-10@"/>
-        <replace file="${reference.further.dir}/further-open-core/pom.xml" 
-                 replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
-        </replace>         
-
         <echo message="Customizing file ${reference.further.dir}/further-open-osgi/osgi-core-features/src/main/resources/feature.xml" />
         <echo message="replacing token @DSCUSTOM-13@"/>
         <replace file="${reference.further.dir}/further-open-osgi/osgi-core-features/src/main/resources/feature.xml" 

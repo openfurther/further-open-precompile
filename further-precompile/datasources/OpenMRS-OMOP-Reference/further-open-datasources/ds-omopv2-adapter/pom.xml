@@ -120,6 +120,7 @@
 		<dependency>
 			<groupId>edu.utah.further.ds</groupId>
 			<artifactId>ds-omop</artifactId>
+			<version>${parent.version}</version>
 		</dependency>
 
                 <dependency>

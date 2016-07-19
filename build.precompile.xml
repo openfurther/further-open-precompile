@@ -327,7 +327,7 @@
         </replace -->         
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ds-api/pom.xml" />
-        <echo message="replacing token @DSCUSTOM-40@"/>
+        <echo message="replacing token @DSCUSTOM-04@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ds-api/pom.xml" 
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         
@@ -338,7 +338,7 @@
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         
 
-        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/pom.xml" />
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/pom.xml" /> <!-- typo, this should be for spring context services : see line 497 -->
         <echo message="replacing tokens @DSCUSTOM-07@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml" 
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
@@ -351,7 +351,7 @@
         </replace>         
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-ws/pom.xml" />
-        <echo message="replacing token @DSCUSTOM-40@"/>
+        <echo message="replacing token @DSCUSTOM-04@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-ws/pom.xml" 
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>         
@@ -471,13 +471,13 @@
         </replace>         
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml" />
-        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <echo message="replacing tokens @DSCUSTOM-04@ "/>
         <replace file="${reference.further.dir}/further-open-core/ds/ds-impl/pom.xml"
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>
 
         <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml" />
-        <echo message="replacing tokens @DSCUSTOM-40@ "/>
+        <echo message="replacing tokens @DSCUSTOM-04@ "/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-impl/pom.xml"
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>
@@ -494,7 +494,7 @@
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>
 
-        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml" />
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml" /> <!-- DUP!!! see line 341 -->
         <echo message="replacing tokens @DSCUSTOM-44@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/main/resources/META-INF/spring/fqe-mpi-impl-context-services.xml"
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
@@ -506,7 +506,7 @@
                  replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
         </replace>
 
-        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml" />
+        <echo message="Customizing file ${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml" /> <!-- DUP : see line 347 -->
         <echo message="replacing tokens @DSCUSTOM-47@ @DSCUSTOM-48@"/>
         <replace file="${reference.further.dir}/further-open-core/fqe/fqe-mpi-impl/src/test/resources/fqe-mpi-impl-test-context-identifier-datasource.xml"
                   replacefilterfile="${custom.datasource.dir}/custom.datasource.properties">
